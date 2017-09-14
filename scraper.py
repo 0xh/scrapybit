@@ -550,7 +550,7 @@ def get_onepage_message_info(url):
         if post.find('div', class_="quoteheader") is not None:
             i = 0
             while i < len(post.contents):
-                if i < 0:
+                if len(post.contents) == 0:
                     break
                 if post.contents[i] != "" and str(post.contents[i].name) == "div":
                     if post.contents[i].attrs.has_key('class'):
@@ -846,7 +846,7 @@ if __name__ == '__main__':
 
     # select_topic_inDB(1)
     use_proxy()
-    if parse_user_info_from_topic(2):
-        parse_message_info_from_topic(2)
+    if parse_user_info_from_topic(3):
+        parse_message_info_from_topic(3)
     print "this 100 topic parse complete!"
     # parse_onetopic_messageinfo('https://bitcointalk.org/index.php?topic=2059111.0')
